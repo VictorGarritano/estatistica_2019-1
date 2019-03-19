@@ -1,3 +1,5 @@
+"""Main script for Poker hand simulation"""
+
 import json
 from multiprocessing import Pool
 from datetime import datetime
@@ -12,6 +14,18 @@ runs = 1000
 
 
 def run(number):
+    """
+    This function generates a population sample with size sample.
+    It also computes probabilities for each hand, considering a
+    frequentist approach.
+
+    Arguments:
+        - number (int): run ID
+
+    Returns:
+        - stats (str): returns a JSON formatted string containing
+            probabilities for each poker hand
+    """
     print('starting run #{0}'.format(number))
     evaluator = Evaluator()
     poker_hands = defaultdict(int)
